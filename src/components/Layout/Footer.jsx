@@ -4,7 +4,10 @@ const Footer = () => {
             <div className='footerContents'>
                 <div className="footerBox">
                     <img src="./images/VVS_LOGO_WG.jpg" alt="vvs" className="footerLogo"/>
+                    <hr/>
                     <div className="footerText">"내 삶을 가치있게"</div>
+                </div>
+                <div className="footerMenu">
                 </div>
                 <div className="footerMenu">
                     <div className="menuTitle">보험상품</div>
@@ -34,8 +37,8 @@ const Footer = () => {
                     <img src="./images/sns.png" alt="sns"/>
                 </div>
                 <div className="footerInfo">
-                    (주) VVS라이프 | CEO: 강혜광 | 고객센터: 02-1111-2222 | 이메일: help@vvslife.co.kr |<br/>
-                    주소: 서울 금천구 가단디지털1로 168, 우림라이온스밸리 B동 1207호
+                    <div>(주) VVS라이프  |  CEO: 강혜광  |  고객센터: 02-1111-2222  |  이메일: help@vvslife.co.kr</div>
+                    <div> 주소: 서울 금천구 가단디지털1로 168, 우림라이온스밸리 B동 1207호</div>
                 </div>
             </div>
         </footer>
