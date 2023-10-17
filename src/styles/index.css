@@ -23,6 +23,7 @@
     top: 0;
     width: 100%;
     height: 80px;
+    background-color:#C3DDD9;
 }
 
 .headerContents {
@@ -50,6 +51,46 @@
     margin-left: 50px;
 }
 
+#products {
+
+}
+
+.subNavigation {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 200px;
+    background-color:#C3DDD9;
+    display: none;
+}
+
+.menuBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuBox ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.menuBox li{
+    margin-left: 50px;
+}
+
+.header:hover .subNavigation {
+    display: block;
+}
+
+.subMenuTitle {
+    list-style: none;
+    color:white;
+}
+
 .login, .info {
     text-decoration: none;
     color: white
@@ -64,7 +105,6 @@
     padding: 0;
     width: 100%;
     height: 80px;
-    background-color:#C3DDD9;
     /* background-image: url('../../public/MainImg.jpg'); */
 }
 
