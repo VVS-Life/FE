@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const handleMouseEnter = () => {
@@ -30,25 +30,25 @@ const Header = () => {
     //     { id: 3, text: '가입내역조회', 
     //         subItems: [''] },  
     // ];
-
+  
     return (
-        <header className='header'>
-            <div className='mainImage'>
-                <div className='headerContents'>
-                    <div>
-                        <img src="./images/VVS_LOGO.jpg" alt="vvs" className="logoStyle" />
-                    </div>
-                    <nav className={`navigation ${isMouseOver ? 'expanded' : ''}`}>
+        <><header className='header'>
+            <div className='headerContents'>
+                <div>
+                    <img src="./images/VVS_LOGO_Header.png" alt="vvs" className="logoStyle"/>
+                </div>
+                <nav className={`navigation ${isMouseOver ? 'expanded' : ''}`}>
                         <ul>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/products" className="navStyle" id='products'>보험상품</Link></li>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/memberServices" className="navStyle" id='clientCenter'>고객센터</Link></li>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/healthCare" className="navStyle" id='healthCare'>헬스케어 서비스</Link></li>
                         </ul>
                     </nav>
-                    <div>
-                        <Link to="/login" className="login">로그인</Link>
-                        <Link to="/info" className="info">공지</Link>
-                    </div>
+                <div>
+                    <Link to = "/login" className="topMenu">로그인</Link>
+                    <Link to = "/logout" className="topMenu">로그아웃</Link>
+                    <Link to = "/subscription" className="topMenu">가입관리</Link>
+                    <Link to = "/board" className="topMenu">공지</Link>
                 </div>
             </div>
             <div className={`subNavigation ${isMouseOver ? 'expanded' : ''}`}>
@@ -62,8 +62,12 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
-        </header>
-    );
-};
+        </header> 
+        <div className='pageName'>
+            - {props.pageName} -
+        </div>
+        </>
+    )
+}
 
 export default Header;
