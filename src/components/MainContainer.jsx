@@ -1,6 +1,7 @@
 const MainContainer = () => {
     return (
         <div className="mainContainer">
+            메인
            {/* <div className="freqUsedMenuBox">
                 <img src="./images/find_myList.png" alt="myList" className="freqUsedMenu"/>
                 <img src="./images/chat.png" alt="chat" className="freqUsedMenu"/>

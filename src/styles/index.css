@@ -1,5 +1,5 @@
 .layout {
-    padding-top: 400px;
+    padding-top: 80px;
 }
 
 /* header css */
@@ -71,10 +71,10 @@
 /* main css */
 
 .main {
-    min-height: calc(100vh -500px);
+    min-height: 50vh;
 }
 
-/* .freqUsedMenuBox {
+.freqUsedMenuBox {
     width: 100%;
     display: flex;
 }
@@ -82,12 +82,12 @@
 .freqUsedMenu {
     width: 100px;
     height: 100px;
-} */
+}
 
 /* footer css */
 
 .footer {
-    height: 360px;
+    height: 355px;
     margin-top: auto;
     background-color: #707271;
 }
