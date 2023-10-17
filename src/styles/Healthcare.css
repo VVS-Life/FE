@@ -1,0 +1,95 @@
+.page {
+    background-color: #FAFAFA;
+}
+
+.introWrap {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.introWrap > h1 {
+    color: #85683C;
+}
+
+.introWrap > div {
+    color: #565656;
+    margin-bottom: 10px;
+}
+
+
+.contentWrap {
+    width: 80%;
+    border: 2px solid #E1E1E1; /* border 속성을 직접 설정하고 border-color를 사용 */
+    margin: auto;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    margin-bottom: 100px;
+}
+
+.contentWrapTop {
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #565656;
+}
+
+.contentWrapBottom {
+    width: 80%;
+    margin: auto;
+}
+
+.inputDisease {
+    width: 100%;
+    border: 2px solid #E1E1E1; /* border 속성을 직접 설정하고 border-color를 사용 */
+    margin-bottom: 30px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 4%;
+    font-size: 18px;
+}
+
+.inputDisease > input {
+    margin-left: 20px;
+    height: 25px;
+}
+
+.inputDisease > button {
+    margin-left: 10px;
+    background-color: #70C3C5;
+    border: 1px solid #E1E1E1;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 35px;
+    width: 80px;
+    color: white;
+    font-size: 15px;
+}
+
+.inputDisease > button:active {
+    transform: translateY(2px); /* 클릭 시 버튼을 2px 아래로 이동 */
+}
+
+.networkWrap {
+    width: 100%;
+    height: 570px;
+    border: 2px solid #E1E1E1; /* border 속성을 직접 설정하고 border-color를 사용 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
+}
+
+.networkButton {
+    width: 50%;
+    height: 70px;
+    border: 0px;
+    background-color: #E6DFD4; /*E1E1E1*/
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+#network_cause, #network_result {
+    width: 100%;
+    height: 500px;
+    background-color: #fffff4;
+}
