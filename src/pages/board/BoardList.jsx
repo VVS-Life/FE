@@ -20,7 +20,7 @@ export default function BoardList() {
     }
 
     const readBoard = (no) => {
-        navigate(`/read-board/${no}`);
+        navigate('/board/${no}');
     }
 
     return (
@@ -45,7 +45,7 @@ export default function BoardList() {
                         <tbody>
                             {boards && boards.map(board =>
                                 <tr key={board.id}>
-                                    <td>{board.id}</td>
+                                    <td><a onClick={() => readBoard(board.id)}>{board.id}</a></td>
                                     <td><a onClick={() => readBoard(board.id)}>{board.title}</a></td>
                                     <td>하재민</td>
                                     <td>{board.createdAt}</td>
