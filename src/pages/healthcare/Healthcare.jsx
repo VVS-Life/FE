@@ -20,7 +20,7 @@ export default function Healthcare() {
     
     return (
         // props로 페이지 이름을 넣어주면 header에 표시된다.
-        <Layout pageName='헬스케어 서비스'>
+        <Layout pageName='질병 진단 서비스'>
             <div className='page'>
                 <div className='introWrap'>
                     <h1>질병원인/증상 탐색 서비스</h1>
