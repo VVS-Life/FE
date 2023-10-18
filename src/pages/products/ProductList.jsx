@@ -1,6 +1,17 @@
+import Layout from "../../components/Layout/Layout"
+import '../../styles/main.css';
+
 const ProductList = () => {
     return (
-        <div>상품리스트</div>
+        <>
+            <Layout pageName='보험상품'>
+                <div>
+                    <div >
+
+                    </div>
+                </div>
+            </Layout>
+        </>
     )
 }
 

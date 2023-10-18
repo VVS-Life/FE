@@ -7,7 +7,7 @@ const Header = (props) => {
     const handleMouseEnter = () => {
         setIsMouseOver(true);
     };
-
+    
     const handleMouseLeave = () => {
         setIsMouseOver(false);
     };

@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/Main';
+import MainPage from './pages/main/Main';
 import Healthcare from './pages/healthcare/Healthcare';
 import BoardList from './pages/board/BoardList'
 import BoardWrite from './pages/board/BoardWrite'
