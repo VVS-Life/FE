@@ -5,6 +5,7 @@ import Healthcare from './pages/healthcare/Healthcare';
 import BoardList from './pages/board/BoardList'
 import BoardWrite from './pages/board/BoardWrite'
 import BoardDetail from './pages/board/BoardDetail'
+import ProductList from './pages/products/ProductList'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/boardList" element={<BoardList />} />
         <Route path="/boardWrite" element={<BoardWrite />} />
         <Route path="/board/:no" element={<BoardDetail />} />
+        <Route path="/productList" element={<ProductList />} />
       </Routes>
     </BrowserRouter>
   );

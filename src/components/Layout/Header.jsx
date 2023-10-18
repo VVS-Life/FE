@@ -39,13 +39,19 @@ const Header = (props) => {
         <><header className='header'>
             <div className='headerContents'>
                 <div>
-                    <Link to = "/"><img src="./images/VVS_LOGO_Header.png" alt="vvs" className="logoStyle"/></Link>
+                    <Link to = "/"><img src="./images/VVS_LOGO_NU.png" alt="vvs" className="logoStyle"/></Link>
                 </div>
-                <nav className="navigation"> 
-                        <ul>
-                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/products" className="navStyle" id='products'>보험상품</Link></li>
-                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/memberServices" className="navStyle" id='clientCenter'>고객센터</Link></li>
-                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/healthCare" className="navStyle" id='healthCare'>헬스케어 서비스</Link></li>
+                <nav className="navigation">
+                        <ul className='menuBox'>
+                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
+                                <Link to="/productList" className="navStyle" id='products'>보험상품</Link>
+                            </li>
+                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
+                                <Link to="/memberServices" className="navStyle" id='clientCenter'>고객센터</Link>
+                            </li>
+                            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
+                                <Link to="/healthCare" className="navStyle" id='healthCare'>헬스케어 서비스</Link>
+                            </li>
                         </ul>
                 </nav>
                 <div>
@@ -61,10 +67,37 @@ const Header = (props) => {
                         <Link to = "/"><img src="./images/VVS_LOGO.jpg" alt="vvs" className="logoStyle"/></Link>
                     </div>
                     <nav className="navigation"> 
-                            <ul>
-                                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/products" className="navStyle2" id='products2'>보험상품</Link></li>
-                                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/memberServices" className="navStyle2" id='clientCenter2'>고객센터</Link></li>
-                                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><Link to="/healthCare" className="navStyle2" id='healthCare2'>헬스케어 서비스</Link></li>
+                            <ul className='menuBox'>
+                                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
+                                    <Link to="/productList" className="navStyle2" id='products2'>보험상품</Link>
+                                    <ul className='navItem'>
+                                        {items1.map(item => (
+                                            <li key={item.id} className='subMenuTitle'>
+                                                <Link to="/product/${item.id}" className="category" >{item.text}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
+                                    <Link to="/memberServices" className="navStyle2" id='clientCenter2'>고객센터</Link>
+                                    <ul className='navItem'>
+                                        {items2.map(item => (
+                                            <li key={item.id} className='subMenuTitle'>
+                                                <Link to="/product/${item.id}" className="category" >{item.text}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                                <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
+                                    <Link to="/healthCare" className="navStyle2" id='healthCare2'>헬스케어 서비스</Link>
+                                    <ul className='navItem'>
+                                        {items3.map(item => (
+                                            <li key={item.id} className='subMenuTitle'>
+                                                <Link to="/product/${item.id}" className="category" >{item.text}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
                             </ul>
                     </nav>
                     <div>
@@ -74,30 +107,7 @@ const Header = (props) => {
                         <Link to = "/board" className="topMenu2">공지</Link>
                     </div>
                 </div>
-                    <div className='menuBox'>
-                        <ul>
-                            {items1.map(item => (
-                                <li key={item.id} className='subMenuTitle'>
-                                    <Link to="/product/${item.id}" className="category" >{item.text}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                        <ul>
-                            {items2.map(item => (
-                                <li key={item.id} className='subMenuTitle'>
-                                    <Link to="/product/${item.id}" className="category" >{item.text}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                        <ul>
-                            {items3.map(item => (
-                                <li key={item.id} className='subMenuTitle'>
-                                    <Link to="/product/${item.id}" className="category" >{item.text}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+            </div>
         </header> 
         <div className='pageName'>
             - {props.pageName} -
