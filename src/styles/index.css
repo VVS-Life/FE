@@ -1,0 +1,234 @@
+.layout {
+    padding-top: 80px;
+}
+
+/* header css */
+
+.logoStyle {
+    width: 160px;
+    height: 40px;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding-top: 15px;
+    background-color:#A6D8E6;
+}
+
+.headerContents {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerContents > div > img {
+    width: 230px;
+    height: 60px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.navigation li{
+    margin-right: 35px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.subNavigation {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 200px;
+    background-color:#C3DDD9;
+    display: none;
+}
+
+.menuBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuBox ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.menuBox li{
+    margin-left: 50px;
+}
+
+.header:hover .subNavigation {
+    display: block;
+}
+
+.subMenuTitle {
+    list-style: none;
+    color:white;
+}
+
+.navStyle {
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+}
+
+
+.topMenu {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+}
+
+.pageName {
+    width: 100%;
+    /* background-image: url('../../public/MainImg.jpg'); */
+    height: 250px;
+    background-color: #A6D8E6;
+    color: white;
+    font-size: 35px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+/* main css */
+
+.main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    min-height: 50vh;
+}
+
+.freqUsedMenuBox {
+    width: 100%;
+    display: flex;
+}
+
+.freqUsedMenu {
+    width: 100px;
+    height: 100px;
+}
+
+/* footer css */
+
+.footer {
+    height: 420px;
+    background-color: #707271;
+}
+
+.footerContents {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.footerBox {
+    width: 320px;
+    height: 210px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #8B8B8B;
+}
+
+.footerBox > hr {
+    width: 90%;
+}
+
+.footerLogo{
+    width: 160px;
+    height: 40px;
+    margin-bottom: 0px;
+}
+
+.footerMenu {
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.title {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+}
+
+.sns {
+    width: 400px;
+}
+
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.footerInfo > div {
+    font-size: 13px;
+    color: white;
+    margin-bottom:5px;
+    display: flex;
+    justify-content: end;
+}
+
+
+
+hr {
+    color: white;
+    size: "2";
+    margin: 20px 0;
+}
+
+.menuTitle {
+    font-weight: 600;
+    margin-bottom:10px;
+}
+
+.menu {
+    font-size: 16px;
+}
