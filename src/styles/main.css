@@ -1,0 +1,76 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.testHead {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.mainContainer {
+    margin: 0;
+    padding:0;
+    min-height: 150vh;
+}
+
+.mainImg {
+    width: 100%;
+    height: 700px;
+    background-image: url('../../public/images/MainImg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.navStyle2 {
+    margin-bottom: 20px;
+}
+
+.subMenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.subMenuTitle {
+    margin-left: 100px;
+}
+
+.freqUsedMenuBox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.freqUsedMenu {
+    padding: 0;
+    margin: 100px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.freqText {
+    margin-top: 20px;
+    text-align: center;
+    width: 120px;
+}
+
+.freqUsedImg {
+    width: 100px;
+    height: 100px;
+}
+
+.testHead:hover .subNavigation {
+    display: block;
+}
