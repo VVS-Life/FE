@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = (props) => {
+const Test = (props) => {
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const handleMouseEnter = () => {
         setIsMouseOver(true);
     };
-    
+
     const handleMouseLeave = () => {
         setIsMouseOver(false);
     };
@@ -36,7 +36,7 @@ const Header = (props) => {
     ];
   
     return (
-        <><header className='header'>
+        <><header className='testHead'>
             <div className='headerContents'>
                 <div>
                     <Link to = "/"><img src="./images/VVS_LOGO_NU.png" alt="vvs" className="logoStyle"/></Link>
@@ -55,7 +55,7 @@ const Header = (props) => {
                         </ul>
                 </nav>
                 <div>
-                    <Link to = "/login/member" className="topMenu">로그인</Link>
+                    <Link to = "/login" className="topMenu">로그인</Link>
                     <Link to = "/logout" className="topMenu">로그아웃</Link>
                     <Link to = "/subscription" className="topMenu">가입관리</Link>
                     <Link to = "/boardList?page=0&size=10" className="topMenu">문의</Link>
@@ -107,12 +107,10 @@ const Header = (props) => {
                         <Link to = "/boardList?page=0&size=10" className="topMenu2">문의</Link>
                     </div>
                 </div>
+            </div>
         </header> 
-        <div className='pageName'>
-            - {props.pageName} -
-        </div>
         </>
     )
 }
 
-export default Header;
+export default Test;

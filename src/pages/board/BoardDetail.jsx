@@ -1,88 +1,61 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import '../../styles/board/BoardDetail.css'
+import Layout from "../../components/Layout/Layout"
 import BoardService from '../../service/BoardService';
+import { useParams, useNavigate } from 'react-router-dom';
 
-class ReadBoardComponent extends Component {
-    constructor(props) {
-        super(props);
+function BoardDetail(props) {
+    const {no} = useParams();
+    const [board, setBoard] = useState({});
+    const navigate = useNavigate();
 
-        //# 1.this.state에 글 상세보기에 사용될 파라미터 정의
-        this.state = { 
-            no: this.props.match.params.no,
-            board: {}
-        }
-
-    }
-
-    //# 2.페이지가 로딩될때 API와 통신하여 글 객체를 가져온다.
-    componentDidMount() {
-        BoardService.getOneBoard(this.state.no).then( res => {
-            this.setState({board: res.data});
+    useEffect(() => {
+        // 페이지가 로딩될 때 API와 통신하여 글 객체를 가져옵니다.
+        BoardService.getOneBoard(no).then((res) => {
+            console.log(res.data); 
+            setBoard(res.data);
         });
+    }, [no]);
+    
+    let imageArray = [];
+    if (board.image) {
+        imageArray = board.image.split(',').map(url => url.trim());
+        // 이제 imageArray를 사용할 수 있습니다.
     }
 
-    //# 3. 파라미터 값에 따라 페이지에 표시할 내용을 변경
-    returnBoardType(typeNo) {
-        let type = null;
-        if (typeNo == 1) {
-            type = "자유게시판";
+    const goToList = () => {
+        navigate('/boardList');
+    };
 
-        } else if (typeNo == 2 ) {
-            type = "질문과 답변 게시판";
-
-        } else {
-            type = "타입 미지정";
-        }
-
-        return (
-            <div className = "row">
-                <label> Board Type : </label> {type}
-            </div>
-        )
-
-    }
-
-    returnDate(cTime, uTime) {
-        return (
-            <div className = "row">
-                <label>생성일 : [ {cTime} ] / 최종 수정일 : [ {uTime} ] </label>
-            </div>
-        )
-    }
-
-    //# 4. 글 목록으로 이동하는 함수
-    goToList() {
-        this.props.history.push('/board');
-    }
-
-    render() {
-        return (
-            <div>
-                <div className = "card col-md-6 offset-md-3">
-                    <h3 className ="text-center"> Read Detail</h3>
-                    <div className = "card-body">
-                            {this.returnBoardType(this.state.board.type)} 
-                            <div className = "row">      
-                                <label> Title </label> : {this.state.board.title}
-                            </div>
-
-                            <div className = "row">
-                                <label> Contents </label> : <br></br>
-                                <textarea value={this.state.board.contents} readOnly/> 
-                            </div >
-
-                            <div className = "row">
-                                <label> MemberNo  </label>: 
-                                {this.state.board.memberNo}
-                            </div>
-
-                            {this.returnDate(this.state.board.createdTime, this.state.board.updatedTime) }
-                            <button className="btn btn-primary" onClick={this.goToList.bind(this)} style={{marginLeft:"10px"}}>글 목록으로 이동</button>
-                    </div>
+    return (
+        <Layout pageName="게시글" >
+        <div>
+            <div className="card col-md-6 offset-md-3"><br/>
+                <h3 className="text-center">{board.title}</h3>
+                <div className="card-body">
+                    <div id='boardInfo'>
+                        <div>글번호: {board.id}</div>
+                        <div>비공개 여부: {board.isPublic}</div> 
+                        <div>답변 여부: {board.isAnswer}</div> 
+                    </div><br/>
+                    <div className="row" id='boardContent'>
+                        <textarea value={board.content} readOnly />
+                    </div><br/>
+                    <div id="boardImage">
+                        {imageArray.map((f) => <img src={f} ></img>)}
+                    </div><br/>
+                    <div className="row">
+                        <label>생성일: [ {board.createdAt} ] </label>
+                        <label>최종 수정일: [ {board.modifiedAt} ]</label>
+                    </div><br/>
+                    <button className="btn btn-primary" onClick={goToList} style={{ marginLeft: "10px" }}>
+                        글 목록으로 이동
+                    </button><br/>
                 </div>
-
             </div>
-        );
-    }
+        </div>
+        </Layout>
+    );
 }
 
-export default ReadBoardComponent;
+export default BoardDetail;
