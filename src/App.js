@@ -5,8 +5,8 @@ import Healthcare from './pages/healthcare/Healthcare';
 import BoardList from './pages/board/BoardList'
 import BoardWrite from './pages/board/BoardWrite'
 import BoardDetail from './pages/board/BoardDetail'
-import MemberJoin from './pages/join/MemberJoin'
-import MemberLogin from './pages/login/MemberLogin';
+import MemberJoin from './pages/member/MemberJoin'
+import MemberLogin from './pages/member/MemberLogin';
 import ProductList from './pages/products/ProductList'
 
 function App() {

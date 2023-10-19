@@ -57,6 +57,7 @@ export default function MemberJoin() {
       gender: state.gender,
       phoneNumber: state.phoneNumber,
     };
+    
 
     try {
       await MemberJoinService.createMember(data);
@@ -134,13 +135,9 @@ export default function MemberJoin() {
           </div>
           <div>
             <label>성별</label>
-            <input
-              type="text"
-              placeholder="성별"
-              //   name="gender"
-              value={state.gender}
-              onChange={onGenderHandler}
-            />
+            {/* <input type="text" placeholder="성별" value={state.gender} onChange={onGenderHandler} /> */}
+            <input type="radio" name="gender" value="남자" onChange={onGenderHandler} defaultChecked checked={state.gender === "남자"} />남자
+            <input type="radio" name="gender" value="여자" onChange={onGenderHandler} checked={state.gender === "여자"}/>여자
           </div>
           <div>
             <label>전화 번호</label>
