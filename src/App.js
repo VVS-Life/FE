@@ -8,6 +8,7 @@ import BoardDetail from './pages/board/BoardDetail'
 import MemberJoin from './pages/member/MemberJoin'
 import MemberLogin from './pages/member/MemberLogin';
 import ProductList from './pages/products/ProductList'
+import ProductDetail from './pages/products/ProductDetail';
 import Complete from './pages/subscription/Complete';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/productList" element={<ProductList />} />
         <Route path="/subscription/complete" element={<Complete />} />
         <Route path="/productList?search/category=:ctg" element={<ProductList />} />
+        <Route path="/productDetail/:id" element={<ProductDetail />} />
       </Routes>
     </BrowserRouter>
   );
