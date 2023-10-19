@@ -24,11 +24,11 @@ const Header = (props) => {
     ];
     const items2 = [
         { id: 1, text: '문의게시판', 
-            subItems: [''] },
+            url: '/boardList?page=0&size=10' },
         { id: 2, text: '채팅', 
-            subItems: [''] },
+            url: '/chat'  },
         { id: 3, text: '가입내역조회', 
-            subItems: [''] },  
+            url: '/subsList'  },  
     ];
     const items3 = [
         { id: 1, text: '질병 진단 서비스', 
@@ -69,11 +69,11 @@ const Header = (props) => {
                     <nav className="navigation"> 
                             <ul className='menuBox'>
                                 <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
-                                    <Link to="/productList" className="navStyle2" id='products2'>보험상품</Link>
+                                    <Link to="/productList?search/category=" className="navStyle2" id='products2'>보험상품</Link>
                                     <ul className='navItem'>
                                         {items1.map(item => (
                                             <li key={item.id} className='subMenuTitle'>
-                                                <Link to="/product/${item.id}" className="category" >{item.text}</Link>
+                                                <Link to={`/productList?search/category=${item.text}`} className="category" >{item.text}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -83,7 +83,7 @@ const Header = (props) => {
                                     <ul className='navItem'>
                                         {items2.map(item => (
                                             <li key={item.id} className='subMenuTitle'>
-                                                <Link to="/product/${item.id}" className="category" >{item.text}</Link>
+                                                <Link to={item.url} className="category" >{item.text}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -93,7 +93,7 @@ const Header = (props) => {
                                     <ul className='navItem'>
                                         {items3.map(item => (
                                             <li key={item.id} className='subMenuTitle'>
-                                                <Link to="/product/${item.id}" className="category" >{item.text}</Link>
+                                                <Link to="/healthCare" className="category" >{item.text}</Link>
                                             </li>
                                         ))}
                                     </ul>

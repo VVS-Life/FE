@@ -21,6 +21,7 @@ function App() {
         <Route path="/join/member" element={<MemberJoin />} />
         <Route path="/login/member" element={<MemberLogin />} />
         <Route path="/productList" element={<ProductList />} />
+        <Route path="/productList?search/category=:ctg" element={<ProductList />} />
       </Routes>
     </BrowserRouter>
   );
