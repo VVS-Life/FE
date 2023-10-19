@@ -3,16 +3,11 @@
 import axios from 'axios'; 
 
 // # 2. spring boot api의 URL을 정의.
-const BOARD_API_BASE_URL = "http://localhost:8080/board?page=0&size=10"; // /board?page=1&size=10
-const BOARD_API_CREATE_URL = "http://localhost:8080/board"; // 일단 작성자1로 작성.
+const BOARD_API_BASE_URL = "http://localhost:8080/board";
 
 class BoardService {
-
-// # 3. 글목록 데이터를 가져오는 함수
-    getBoards() {
-        return axios.get(BOARD_API_BASE_URL);
-    }
-
+    static jwtToken = "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MTIzNCIsImF1dGgiOiJNRU1CRVIiLCJleHAiOjE2OTc3MDU2NDEsImlhdCI6MTY5NzcwMjA0MX0.5ZYvM2ZYprmaqjj72X11XdBWUXeQC_amJFPwi0bGnag";
+    
     createBoard(dto, images) {
         const formData = new FormData();
         // const jsonData = JSON.stringify(board);
@@ -32,18 +27,33 @@ class BoardService {
         
         return axios({
             method: 'post',
-            url: "http://localhost:8080/board",
+            url: BOARD_API_BASE_URL,
             data: formData,
             headers: {
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MTIzNCIsImF1dGgiOiJNRU1CRVIiLCJleHAiOjE2OTc2MzUwODEsImlhdCI6MTY5NzYzMTQ4MX0.DFjZKzJPbsNPSQG20VZ49DbQA5Hl-OwnE0JOsJE_d48',
+                'Authorization': this.constructor.jwtToken,
                 'Content-Type': 'multipart/form-data',
             },
         });
         //return axios.post(BOARD_API_BASE_URL, board);
     }
 
+    deleteBoard(no) {
+        return axios({
+            method: 'delete',
+            url: BOARD_API_BASE_URL + "/" + no,
+            headers: {
+                'Authorization': this.constructor.jwtToken,
+            },
+        });
+    }
+
+    //페이징 처리
+    getBoards(page) {
+        return axios.get(BOARD_API_BASE_URL + "?page="+ page);
+    }
+
     getOneBoard(no) {
-        return axios.get("http://localhost:8080/board/" + no);
+        return axios.get(BOARD_API_BASE_URL + "/" + no);
     }
 
 }
