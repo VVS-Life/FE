@@ -19,7 +19,7 @@ class BoardService {
         // const jsonBlob = new Blob([jsonData], { type: "application/json" })
         // formData.append('boardRequestDTO', jsonBlob);
         formData.append('boardRequestDTO', new Blob([JSON.stringify(dto)], { type: "application/json" }));
-        
+
         if (images) { // 이미지를 선택했을 때만 처리
             for (let i = 0; i < images.length; i++) {
                 formData.append('img', images[i]);
@@ -29,7 +29,7 @@ class BoardService {
         for (const pair of formData.entries()) {
             console.log(pair[0], pair[1]);
         }
-        
+
         return axios({
             method: 'post',
             url: "http://localhost:8080/board",

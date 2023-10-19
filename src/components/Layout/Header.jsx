@@ -55,7 +55,7 @@ const Header = (props) => {
                         </ul>
                 </nav>
                 <div>
-                    <Link to = "/login" className="topMenu">로그인</Link>
+                    <Link to = "/login/member" className="topMenu">로그인</Link>
                     <Link to = "/logout" className="topMenu">로그아웃</Link>
                     <Link to = "/subscription" className="topMenu">가입관리</Link>
                     <Link to = "/boardList?page=0&size=10" className="topMenu">문의</Link>
@@ -107,7 +107,6 @@ const Header = (props) => {
                         <Link to = "/boardList?page=0&size=10" className="topMenu2">문의</Link>
                     </div>
                 </div>
-            </div>
         </header> 
         <div className='pageName'>
             - {props.pageName} -

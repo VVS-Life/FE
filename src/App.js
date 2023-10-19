@@ -5,6 +5,8 @@ import Healthcare from './pages/healthcare/Healthcare';
 import BoardList from './pages/board/BoardList'
 import BoardWrite from './pages/board/BoardWrite'
 import BoardDetail from './pages/board/BoardDetail'
+import MemberJoin from './pages/join/MemberJoin'
+import MemberLogin from './pages/login/MemberLogin';
 import ProductList from './pages/products/ProductList'
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/boardList" element={<BoardList />} />
         <Route path="/boardWrite" element={<BoardWrite />} />
         <Route path="/board/:no" element={<BoardDetail />} />
+        <Route path="/join/member" element={<MemberJoin />} />
+        <Route path="/login/member" element={<MemberLogin />} />
         <Route path="/productList" element={<ProductList />} />
       </Routes>
     </BrowserRouter>
