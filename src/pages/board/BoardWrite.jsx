@@ -12,7 +12,7 @@ export default function BoardWrite() {
         title: '',
         content: '',
         image: null,
-        isPublic: '비공개'
+        isPublic: '공개'
     });
 
     const changeTitleHandler = (event) => {
@@ -85,8 +85,8 @@ export default function BoardWrite() {
                                     <br></br>
                                     <div className="form-group">
                                         <label> [ 비공개 여부 ] </label><br></br>
-                                        <input type="checkbox" name="isPublic" onChange={changeIsPublicHandler} checked={state.isPublic === "공개"} />
-                                        <label> 공개 </label>
+                                        <input type="checkbox" name="isPublic" onChange={changeIsPublicHandler} checked={state.isPublic === "비공개"} />
+                                        <label> 비공개 </label>
                                     </div>
                                     <br></br>
                                     <button className="btn btn-success" onClick={createBoard} disabled={!isFormValid()}>저장</button>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/Healthcare.css'
+import '../../styles/healthcare/Healthcare.css'
 import NetworkCause from './NetworkCause';
 import NetworkResult from './NetworkResult';
 import Layout from "../../components/Layout/Layout"
