@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import '../../styles/subscription/Complete.css';
+import '../../styles/subscription/complete.css';
 
 import { useNavigate } from "react-router-dom";
 
@@ -15,9 +15,9 @@ export default function Complete() {
   return (
     <Layout pageName="보험 신청 완료">
         <h2 className="completeText">신청해주셔서 감사합니다</h2>
-        <div className="btn-div">
-        <button onClick={toMain} className="left-btn">메인으로 이동</button>
-        <button onClick={()=>{}} className="right-btn">가입 내역으로 이동</button>
+        <div className="btnBox">
+          <button onClick={toMain} className="completeBtn" id="toMainBtn">메인으로 이동</button>
+          <button onClick={()=>{}} className="completeBtn" id="toSubsListBtn">가입 내역으로 이동</button>
         </div>
     </Layout>
   );

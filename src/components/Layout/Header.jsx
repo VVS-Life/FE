@@ -12,6 +12,8 @@ const Header = (props) => {
         setIsMouseOver(false);
     };
 
+    const jwtToken = localStorage.getItem('Authorization');
+
     const items1 = [
         { id: 1, text: '종신/정기보험', 
             subItems: ['든든한 실속 종신보험(무배당, 보증비용부과형)[해약환급금 일부지급형]','슬기로운(남성 · 여성)케어종신보험 (무배당, 해약환급금 일부지급형)',''] },

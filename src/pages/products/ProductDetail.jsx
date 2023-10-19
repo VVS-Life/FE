@@ -8,18 +8,24 @@ function ProductDetail(props) {
     const {id} = useParams();
     const [product, setProduct] = useState({});
     const navigate = useNavigate();
+    const jwtToken = localStorage.getItem('Authorization');
 
-    // const complete = async (id, product) => {
+    const complete = async (event) => {
+        event.preventDefault();
 
-    //     try {
-    //         await ProductService.subscription(id, product);
-    //             alert("가입신청이 성공적으로 완료되었습니다.");
-    //             navigate('/complete');
-    //     } catch (error) {
-    //         console.error(error);
-    //         alert("가입신청에 실패했습니다.");
-    //     }
-    // };
+        let period = 5;
+        let insFee = 14500;
+
+        try {
+                console.log(product)
+                await ProductService.subscription(id, product,jwtToken);
+                alert("가입신청이 성공적으로 완료되었습니다.");
+                navigate('/subscription/complete');
+            } catch (error) {
+            console.error(error);
+            alert("가입신청에 실패했습니다.");
+        }
+    };
 
     useEffect(() => {
         ProductService.getProductDetail(id).then((res) => {
@@ -35,7 +41,7 @@ function ProductDetail(props) {
                     {product.productName}
                 </div>
                 <img src={product.content} alt="내용" className='contentImg'/>
-                {/* <button className="subsButton" onClick={complete({id, product})}>가입 신청</button> */}
+                <button className="subsButton" onClick={complete}>가입 신청</button>
             </div>
         </Layout>
     );
