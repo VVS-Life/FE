@@ -22,6 +22,7 @@ export default function BoardList() {
             setPage(res.data.pagingData.currentPageNum);
             setPaging(res.data.pagingData);
             setBoards(res.data.list.content);
+            console.log(res.data.list.content);
             setLoading(false); // 요청 완료 후 로딩 상태 업데이트
         });
     }
@@ -120,7 +121,7 @@ export default function BoardList() {
                                     <tr key={board.id}>
                                         <td>{board.id}</td>
                                         <td><Link to={`/board/${board.id}`}>{board.title}</Link></td>
-                                        <td>하재민</td>
+                                        <td>{board.nickName}</td>
                                         <td>{formatDateTime(board.createdAt)}</td>
                                         <td>{formatDateTime(board.modifiedAt)}</td>
                                         <td>{board.isPublic}</td>

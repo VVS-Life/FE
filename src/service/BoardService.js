@@ -6,9 +6,13 @@ import axios from 'axios';
 const BOARD_API_BASE_URL = "http://localhost:8080/board";
 
 class BoardService {
-    static jwtToken = "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MTIzNCIsImF1dGgiOiJNRU1CRVIiLCJleHAiOjE2OTc3MDU2NDEsImlhdCI6MTY5NzcwMjA0MX0.5ZYvM2ZYprmaqjj72X11XdBWUXeQC_amJFPwi0bGnag";
-    
-    createBoard(dto, images) {
+    // static jwtToken = "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MTIzNCIsImF1dGgiOiJNRU1CRVIiLCJleHAiOjE2OTc3MDU2NDEsImlhdCI6MTY5NzcwMjA0MX0.5ZYvM2ZYprmaqjj72X11XdBWUXeQC_amJFPwi0bGnag";
+    apiJwtToken(jwtToken) {
+        return "Bearer" + " " + jwtToken
+    }
+
+
+    createBoard(dto, images, jwtToken) {
         const formData = new FormData();
         // const jsonData = JSON.stringify(board);
         // const jsonBlob = new Blob([jsonData], { type: "application/json" })
@@ -30,19 +34,19 @@ class BoardService {
             url: BOARD_API_BASE_URL,
             data: formData,
             headers: {
-                'Authorization': this.constructor.jwtToken,
+                'Authorization': this.apiJwtToken(jwtToken),
                 'Content-Type': 'multipart/form-data',
             },
         });
         //return axios.post(BOARD_API_BASE_URL, board);
     }
 
-    deleteBoard(no) {
+    deleteBoard(no, jwtToken) {
         return axios({
             method: 'delete',
             url: BOARD_API_BASE_URL + "/" + no,
             headers: {
-                'Authorization': this.constructor.jwtToken,
+                'Authorization': this.apiJwtToken(jwtToken),
             },
         });
     }
