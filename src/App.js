@@ -8,6 +8,7 @@ import BoardDetail from './pages/board/BoardDetail'
 import MemberJoin from './pages/member/MemberJoin'
 import MemberLogin from './pages/member/MemberLogin';
 import ProductList from './pages/products/ProductList'
+import Complete from './pages/subscription/Complete';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/join/member" element={<MemberJoin />} />
         <Route path="/login/member" element={<MemberLogin />} />
         <Route path="/productList" element={<ProductList />} />
+        <Route path="/subscription/complete" element={<Complete />} />
       </Routes>
     </BrowserRouter>
   );
