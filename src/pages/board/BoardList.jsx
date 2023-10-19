@@ -3,7 +3,7 @@ import '../../styles/board/BoardList.css'
 import Layout from "../../components/Layout/Layout"
 import BoardService from '../../service/BoardService';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom'; // 페이지이동1
+import { useNavigate, Link } from 'react-router-dom'; // 페이지이동1
 
 export default function BoardList() {
     const navigate = useNavigate(); // 페이지이동2
@@ -20,7 +20,7 @@ export default function BoardList() {
     }
 
     const readBoard = (no) => {
-        navigate(`/read-board/${no}`);
+        navigate('/board/${no}');
     }
 
     return (
@@ -34,7 +34,7 @@ export default function BoardList() {
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>글 번호</th>
+                                <th>글번호 </th>
                                 <th>타이틀</th>
                                 <th>작성자</th>
                                 <th>작성일</th>
@@ -46,7 +46,7 @@ export default function BoardList() {
                             {boards && boards.map(board =>
                                 <tr key={board.id}>
                                     <td>{board.id}</td>
-                                    <td><a onClick={() => readBoard(board.id)}>{board.title}</a></td>
+                                    <td><Link to={`/board/${board.id}`}>{board.title}</Link></td>
                                     <td>하재민</td>
                                     <td>{board.createdAt}</td>
                                     <td>{board.modifiedAt}</td>

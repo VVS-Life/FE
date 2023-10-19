@@ -58,7 +58,7 @@ const Test = (props) => {
                     <Link to = "/login" className="topMenu">로그인</Link>
                     <Link to = "/logout" className="topMenu">로그아웃</Link>
                     <Link to = "/subscription" className="topMenu">가입관리</Link>
-                    <Link to = "/board" className="topMenu">공지</Link>
+                    <Link to = "/boardList?page=0&size=10" className="topMenu">문의</Link>
                 </div>
             </div>
             <div className={`subNavigation ${isMouseOver ? 'expanded' : ''}`}>       
@@ -104,7 +104,7 @@ const Test = (props) => {
                         <Link to = "/login" className="topMenu2">로그인</Link>
                         <Link to = "/logout" className="topMenu2">로그아웃</Link>
                         <Link to = "/subscription" className="topMenu2">가입관리</Link>
-                        <Link to = "/board" className="topMenu2">공지</Link>
+                        <Link to = "/boardList?page=0&size=10" className="topMenu2">문의</Link>
                     </div>
                 </div>
                 </div>
