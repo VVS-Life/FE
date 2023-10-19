@@ -39,7 +39,7 @@ const Header = (props) => {
         <><header className='header'>
             <div className='headerContents'>
                 <div>
-                    <Link to = "/"><img src="./images/VVS_LOGO_NU.png" alt="vvs" className="logoStyle"/></Link>
+                    <Link to = "/"><img src="./images/VVS_LOGO_nu.png" alt="vvs" className="logoStyle"/></Link>
                 </div>
                 <nav className="navigation">
                         <ul className='menuBox'>
@@ -64,7 +64,7 @@ const Header = (props) => {
             <div className={`subNavigation ${isMouseOver ? 'expanded' : ''}`}>       
                 <div className='headerContents'>
                     <div>
-                        <Link to = "/"><img src="./images/VVS_LOGO.jpg" alt="vvs" className="logoStyle"/></Link>
+                        <Link to = "/"><img src="./images/VVS_LOGO_nu.png" alt="vvs" className="logoStyle"/></Link>
                     </div>
                     <nav className="navigation"> 
                             <ul className='menuBox'>
