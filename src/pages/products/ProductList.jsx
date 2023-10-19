@@ -3,37 +3,20 @@ import { useLocation, Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout"
 import '../../styles/main.css';
 import '../../styles/product/productList.css';
-import '../../styles/product/BoxCard.css';
 import ProductService from '../../service/ProductService';
 
 const BoxCard = ({ title, link }) => {
     const linkWithSlash = `/productDetail/${link}`;
   return (
-    // <Link to={linkWithSlash} className="boxCard">
-    //     <p>{title}</p>
-    //     <p>{link}</p>
-    // </Link>
-    <div className="boxCard" onClick={() => openModal('모달 내용을 여기에 넣으세요.')}>
+    <Link to={linkWithSlash} className="boxCard">
         <p>{title}</p>
         <p>{link}</p>
-    </div>
+    </Link>
   );
 }
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
-    const [isModalOpen, setModalOpen] = useState(false);
-    const [modalContent, setModalContent] = useState('');
-
-    const openModal = (content) => {
-    setModalContent(content);
-    setModalOpen(true);
-    };
-
-    const closeModal = () => {
-    setModalOpen(false);
-    setModalContent('');
-    };
     // 현재 URL 정보 가져오기
     const location = useLocation();
 
@@ -88,7 +71,7 @@ const ProductList = () => {
                 <div className="boxCardList">
                     {products && products.map(product =>
                         <div key={product.id} className='productListBox'>
-                            <BoxCard key={product.id} title={product.productName} link={product.id} openModal={openModal} />
+                            <BoxCard key={product.id} title={product.productName} link={product.id} />
                         </div>
                     )}
                 </div>
