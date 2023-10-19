@@ -1,0 +1,14 @@
+.categoryBox{
+    width: 100%;
+    background-color: #A6D8E6;
+    display: flex;
+    justify-content: center;
+    margin-top: -160px;
+    padding-bottom: 30px;
+}
+
+.ctgImg {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+}
