@@ -12,6 +12,7 @@ export default function BoardList() {
     useEffect(() => {
         BoardService.getBoards().then((res) => {
             setBoards(res.data.content);
+            console.log(res.data.content);
         });
     }, []);
 

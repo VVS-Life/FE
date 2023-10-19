@@ -3,12 +3,25 @@
     background-color: #A6D8E6;
     display: flex;
     justify-content: center;
-    margin-top: -160px;
-    padding-bottom: 30px;
+    margin-top: -180px;
+    padding-bottom: 40px;
 }
 
 .ctgImg {
     width: 100px;
     height: 100px;
     margin: 50px;
+}
+
+.ctgText {
+    font-size: 18px;
+    color:white;
+    font-weight: 600;
+    margin-top: -20px;
+}
+
+.ctgSubBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

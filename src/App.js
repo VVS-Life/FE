@@ -17,6 +17,7 @@ function App() {
         <Route path="/boardWrite" element={<BoardWrite />} />
         <Route path="/board/:no" element={<BoardDetail />} />
         <Route path="/productList" element={<ProductList />} />
+        <Route path="/productList?search/category=:ctg" element={<ProductList />} />
       </Routes>
     </BrowserRouter>
   );
