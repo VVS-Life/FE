@@ -23,6 +23,7 @@ function App() {
         <Route path="/login/member" element={<MemberLogin />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/subscription/complete" element={<Complete />} />
+        <Route path="/productList?search/category=:ctg" element={<ProductList />} />
       </Routes>
     </BrowserRouter>
   );
