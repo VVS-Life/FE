@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout"
-import '../../styles/main.css';
 import '../../styles/product/productList.css';
 import ProductService from '../../service/ProductService';
 
