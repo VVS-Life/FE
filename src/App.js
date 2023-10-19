@@ -9,6 +9,7 @@ import MemberJoin from './pages/member/MemberJoin'
 import MemberLogin from './pages/member/MemberLogin';
 import ProductList from './pages/products/ProductList'
 import ProductDetail from './pages/products/ProductDetail';
+import Complete from './pages/subscription/Complete';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/join/member" element={<MemberJoin />} />
         <Route path="/login/member" element={<MemberLogin />} />
         <Route path="/productList" element={<ProductList />} />
+        <Route path="/subscription/complete" element={<Complete />} />
         <Route path="/productList?search/category=:ctg" element={<ProductList />} />
         <Route path="/productDetail/:id" element={<ProductDetail />} />
       </Routes>

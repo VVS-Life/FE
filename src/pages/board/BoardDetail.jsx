@@ -5,6 +5,7 @@ import BoardService from '../../service/BoardService';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function BoardDetail(props) {
+    const jwtToken = localStorage.getItem('Authorization');
     const {no} = useParams();
     const [board, setBoard] = useState({});
     const navigate = useNavigate();
@@ -31,12 +32,12 @@ function BoardDetail(props) {
         event.preventDefault();
 
         try {
-            await BoardService.deleteBoard(board.id);
+            await BoardService.deleteBoard(board.id, jwtToken);
                 alert("글이 성공적으로 삭제되었습니다.");
                 navigate('/boardList');
         } catch (error) {
             console.error(error);
-            alert("글 삭제에 실패했습니다.");
+            alert("작성자 본인만 삭제할 수 있습니다.");
         }
     };
 
@@ -61,6 +62,7 @@ function BoardDetail(props) {
                 <div className="card-body">
                     <div id='boardInfo'>
                         <div>글번호: {board.id}</div>
+                        <div>작성자: {board.nickName}</div>
                         <div>비공개 여부: {board.isPublic}</div> 
                         <div>답변 여부: {board.isAnswer}</div> 
                     </div><br/>

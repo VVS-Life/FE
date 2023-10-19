@@ -1,0 +1,18 @@
+.completeText {
+    text-align: center;
+    color: #70C3C5;
+    font-weight: bold;
+}
+
+.btn-div {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.left-btn {
+    position: relative;
+}
+
+.right-btn {
+    position: relative;
+}

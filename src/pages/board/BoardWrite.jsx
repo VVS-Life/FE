@@ -4,6 +4,8 @@ import BoardService from '../../service/BoardService';
 import { useNavigate } from "react-router-dom";
 
 export default function BoardWrite() {
+    const jwtToken = localStorage.getItem('Authorization');
+
     const navigate = useNavigate();
 
     const [state, setState] = useState({
@@ -44,7 +46,7 @@ export default function BoardWrite() {
         };
 
         try {
-            await BoardService.createBoard(dto, state.image);
+            await BoardService.createBoard(dto, state.image, jwtToken);
             alert("글이 성공적으로 등록되었습니다.");
             navigate('/boardList');
         } catch (error) {
