@@ -32,9 +32,10 @@ class BoardService {
         
         return axios({
             method: 'post',
-            url: "http://localhost:8080/board/1",
+            url: "http://localhost:8080/board",
             data: formData,
             headers: {
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MTIzNCIsImF1dGgiOiJNRU1CRVIiLCJleHAiOjE2OTc2MzUwODEsImlhdCI6MTY5NzYzMTQ4MX0.DFjZKzJPbsNPSQG20VZ49DbQA5Hl-OwnE0JOsJE_d48',
                 'Content-Type': 'multipart/form-data',
             },
         });
