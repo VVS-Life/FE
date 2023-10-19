@@ -3,9 +3,8 @@ import { useLocation, Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout"
 import '../../styles/main.css';
 import '../../styles/product/productList.css';
+import '../../styles/product/BoxCard.css';
 import ProductService from '../../service/ProductService';
-import './BoxCard.css';
-
 
 const BoxCard = ({ title, link }) => {
     const linkWithSlash = `/productDetail/${link}`;
