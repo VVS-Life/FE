@@ -91,6 +91,7 @@ export default function SubsManage() {
                         <th>신청자</th>
                         <th>연락처</th>
                         <th>신청일자</th>
+                        <th>상태</th>
                         <th>승인/거절</th>
                     </tr>
                 </thead>
@@ -100,6 +101,7 @@ export default function SubsManage() {
                             <td>{item.id}</td>
                             <td>{item.productName}</td>
                             <td>{item.username}</td>
+                            <td>{item.phoneNumber}</td>
                             <td>{formatDateTime(item.applyDate)}</td>
                             <td>{item.isApproval}</td>
                             <td className='divBtn'>  
