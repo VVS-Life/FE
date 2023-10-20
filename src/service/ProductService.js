@@ -17,7 +17,18 @@ class ProductService {
 // # 3. 해당 카테고리의 상품 데이터를 가져오는 함수
     getProductDetail(id) {
         return axios.get(PRODUCT_API_BASE_URL+"/"+id);
-    }    
+    }
+
+    subscription(id, product) {
+        return axios({
+            method: 'post',
+            url: PRODUCT_API_BASE_URL+"/"+id+"/subscription",
+            data: product,
+            headers: {
+                'Authorization': this.constructor.jwtToken,
+            },
+        });
+    }
 }
 
 export default new ProductService();

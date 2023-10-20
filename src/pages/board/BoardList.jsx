@@ -22,6 +22,7 @@ export default function BoardList() {
             setPage(res.data.pagingData.currentPageNum);
             setPaging(res.data.pagingData);
             setBoards(res.data.list.content);
+            console.log(res.data.list.content);
             setLoading(false); // 요청 완료 후 로딩 상태 업데이트
         });
     }
@@ -104,9 +105,9 @@ export default function BoardList() {
                     {loading ? ( // 로딩 중일 때
                         <p>Loading...</p>
                     ) : (
-                        <table className="table table-striped table-bordered">
+                        <table className="table table-bordered">
                             <thead>
-                                <tr>
+                                <tr id='tableTh'>
                                     <th>글번호</th>
                                     <th>타이틀</th>
                                     <th>작성자</th>
@@ -117,10 +118,10 @@ export default function BoardList() {
                             </thead>
                             <tbody>
                                 {boards.map(board => (
-                                    <tr key={board.id}>
+                                    <tr key={board.id}  id='tableTd'>
                                         <td>{board.id}</td>
                                         <td><Link to={`/board/${board.id}`}>{board.title}</Link></td>
-                                        <td>하재민</td>
+                                        <td>{board.nickName}</td>
                                         <td>{formatDateTime(board.createdAt)}</td>
                                         <td>{formatDateTime(board.modifiedAt)}</td>
                                         <td>{board.isPublic}</td>
