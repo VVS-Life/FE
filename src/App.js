@@ -13,6 +13,7 @@ import Complete from './pages/subscription/Complete';
 import SubsList from './pages/subscription/SubsList';
 import CsMain from './pages/cs/csMain'
 import SubsManage from './pages/subscription/SubsManage';
+import AdminCheck from './pages/subscription/AdminCheck';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/productList?search/category=:ctg" element={<ProductList />} />
         <Route path="/productDetail/:id" element={<ProductDetail />} />
         <Route path="/csMain" element={<CsMain />} />
+        <Route path="/adminCheck" element={<AdminCheck />} />
       </Routes>
     </BrowserRouter>
   );

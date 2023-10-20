@@ -6,6 +6,7 @@
 
 .trtd > td {
     text-align: center;
+    vertical-align: middle;
 }
 
 #tableWrap {
@@ -26,12 +27,9 @@
 
 .divBtn {
     display: flex;
+    align-items: center;
     justify-content: center;
-    height: 10px;
-}
-
-#toMainBtn {
-    margin-right: 30px;
+    margin:0;
 }
 
 #toSubsListBtn {
@@ -41,8 +39,7 @@
 .completeBtn{
     height: 8px;
     width: 80px;
-    margin: 0;
+    margin: 0 10px;
     font-size: 15px;
     padding: 13px;
-    
 }

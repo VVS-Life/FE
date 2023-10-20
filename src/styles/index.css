@@ -218,9 +218,10 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     padding: 0 10px;
+    margin-top: 30px;
 }
 
 .title {

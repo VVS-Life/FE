@@ -12,22 +12,24 @@ const Footer = () => {
                 <div className="footerMenu">
                     <div className="menuTitle">보험상품</div>
                     <div className="menu">
-                        <div>카테고리1</div>
-                        <div>카테고리2</div>
+                        <div>종신/정기보험</div>
+                        <div>연금/저축보험</div>
+                        <div>변액보험</div>
+                        <div>건강보험</div>
                     </div>
                 </div>
                 <div className="footerMenu">
                     <div className="menuTitle">고객센터</div>
                     <div className="menu">
-                        <div>카테고리1</div>
-                        <div>카테고리2</div>
+                        <div>문의게시판</div>
+                        <div>채팅상담</div>
+                        <div>가입내역조회</div>
                     </div>
                 </div>
                 <div className="footerMenu">
                     <div className="menuTitle">헬스케어 서비스</div>
                     <div className="menu">
-                        <div>카테고리1</div>
-                        <div>카테고리2</div>
+                        <div>질병진단서비스</div>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Layout from "../../components/Layout/Layout";
-import { useNavigate } from "react-router-dom";
 import SubsListService from "../../service/SubsListService";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/subscription/SubsList.css';
 import axios from 'axios'; 
-import { async } from 'q';
 
 export default function SubsManage() {
     const [subsList, setSubsList] = useState([]);
@@ -56,9 +54,6 @@ export default function SubsManage() {
         })
         
     })
-    
-
-    
 
     const formatDateTime = (dateTimeString) => {
         const date = new Date(dateTimeString);
@@ -102,9 +97,11 @@ export default function SubsManage() {
                             <td>{item.username}</td>
                             <td>{formatDateTime(item.applyDate)}</td>
                             <td>{item.isApproval}</td>
-                            <td className='divBtn'>  
-                                <button onClick={()=>{success(item.id)}} className="completeBtn" id="toMainBtn" >승인</button>
-                                <button onClick={()=>{reject(item.id)}} className="completeBtn" id="toSubsListBtn">거절</button>
+                            <td>  
+                                <div className='divBtn'>
+                                    <button onClick={()=>{success(item.id)}} className="completeBtn" id="toMainBtn" >승인</button>
+                                    <button onClick={()=>{reject(item.id)}} className="completeBtn" id="toSubsListBtn">거절</button>
+                                </div>
                             </td>
                         </tr>
                     ))}
