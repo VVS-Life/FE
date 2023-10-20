@@ -14,10 +14,10 @@ export default function Complete() {
 
   return (
     <Layout pageName="보험 신청 완료">
-        <h1 className="completeText">신청해주셔서 감사합니다</h1>
-        <div className="btn-div" id="btnWrap">
-          <button className="btn text-white" onClick={toMain} >메인으로 이동</button>
-          <button className="btn text-white" onClick={()=>{}} >가입 내역으로 이동</button>
+        <h2 className="completeText">신청해주셔서 감사합니다</h2>
+        <div className="btnBox">
+          <button onClick={toMain} className="completeBtn" id="toMainBtn">메인으로 이동</button>
+          <button onClick={()=>{}} className="completeBtn" id="toSubsListBtn">가입 내역으로 이동</button>
         </div>
     </Layout>
   );

@@ -4,6 +4,9 @@ const PRODUCT_API_BASE_URL = "http://localhost:8080/products";
 
 class ProductService {
 
+    apiJwtToken(jwtToken) {
+        return "Bearer" + " " + jwtToken
+    }
 // # 1. 상품목록 데이터를 가져오는 함수
     getProductList() {
         return axios.get(PRODUCT_API_BASE_URL);
@@ -19,13 +22,13 @@ class ProductService {
         return axios.get(PRODUCT_API_BASE_URL+"/"+id);
     }
 
-    subscription(id, product) {
+    subscription(id, product, jwtToken) {
         return axios({
             method: 'post',
-            url: PRODUCT_API_BASE_URL+"/"+id+"/subscription",
-            data: product,
+            url: "http://localhost:8080/product/"+id+"/subscription",
+            data: {product},
             headers: {
-                'Authorization': this.constructor.jwtToken,
+                'Authorization': this.apiJwtToken(jwtToken),
             },
         });
     }
