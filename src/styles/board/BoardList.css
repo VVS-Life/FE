@@ -18,3 +18,12 @@
     justify-content: end;
     align-content: end;
 }
+
+#tableTh > th {
+    background-color: #70C3C5;
+    color: white;text-align: center;
+}
+
+#tableTd > td {
+    text-align: center;
+}

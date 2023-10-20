@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import MemberJoinService from "../../service/MemberService";
 import { useNavigate } from "react-router-dom";
+import '../../styles/member/MemberJoin.css'
 
 export default function MemberJoin() {
   const navigate = useNavigate();
@@ -69,89 +70,122 @@ export default function MemberJoin() {
     }
   };
 
+  const moveLogin = async (event) => {
+    navigate("/login/member");
+  };
+
+  const moveJoin = async (event) => {
+    navigate("/join/member");
+  };
+
   return (
     <Layout pageName="회원가입">
-      <div>
-        <form onSubmit={onSubmitHandler}>
-          <div>
-            <label>아이디</label>
-            <input
-              type="text"
-              placeholder="아이디"
-              name="nickname"
-              value={state.nickname}
-              onChange={onNicknameHandler}
-            />
+      <div id="loginWrap">
+        <div style={{height: "820px"}}>
+          <div id="pageMove">
+            <button onClick={moveLogin} style={{backgroundColor: '#d6d6d6'}}>로그인</button>
+            <button onClick={moveJoin} style={{backgroundColor: '#F1F9FA'}}>회원가입</button>
           </div>
-          <div>
-            <label>비밀번호</label>
-            <input
-              type="password"
-              placeholder="비밀번호"
-              //   name="password"
-              value={state.password}
-              onChange={onPasswordHandler}
-            />
+          <form onSubmit={onSubmitHandler}>
+          <div className="input">
+            <div>
+              <div>아이디 :</div>
+              <input
+                type="text"
+                placeholder="아이디"
+                name="nickname"
+                value={state.nickname}
+                onChange={onNicknameHandler}
+              />
+            </div>
           </div>
-          <div>
-            <label>이름</label>
-            <input
-              type="text"
-              placeholder="이름"
-              //   name="username"
-              value={state.userName}
-              onChange={onUserNameHandler}
-            />
+          <div className="input">
+            <div>
+              <div>비밀번호 :</div>
+              <input
+                type="password"
+                placeholder="비밀번호"
+                //   name="password"
+                value={state.password}
+                onChange={onPasswordHandler}
+              />
+            </div>
           </div>
-          <div>
-            <label>생일</label>
-            <input
-              type="text"
-              placeholder="1999-01-01"
-              //   name="birth"
-              value={state.birth}
-              onChange={onBirthHandler}
-            />
+          <div className="input">
+            <div>
+              <div>이 름 :</div>
+              <input
+                type="text"
+                placeholder="이름"
+                //   name="username"
+                value={state.userName}
+                onChange={onUserNameHandler}
+              />
+            </div>
+            <div>
           </div>
-          <div>
-            <label>이메일</label>
-            <input
-              type="text"
-              placeholder="abc@naver.com"
-              //   name="email"
-              value={state.email}
-              onChange={onEmailHandler}
-            />
+          <div className="input">
+              <div>생  일 :</div>
+              <input
+                type="text"
+                placeholder="1999-01-01"
+                //   name="birth"
+                value={state.birth}
+                onChange={onBirthHandler}
+              />
+            </div>
           </div>
-          <div>
-            <label>주소</label>
-            <input
-              type="text"
-              placeholder="주소"
-              //   name="address"
-              value={state.address}
-              onChange={onAddressHandler}
-            />
+          <div className="input">
+            <div>
+              <div>이메일 :</div>
+              <input
+                type="text"
+                placeholder="abc@naver.com"
+                //   name="email"
+                value={state.email}
+                onChange={onEmailHandler}
+              />
+            </div>
           </div>
-          <div>
-            <label>성별</label>
-            {/* <input type="text" placeholder="성별" value={state.gender} onChange={onGenderHandler} /> */}
-            <input type="radio" name="gender" value="남자" onChange={onGenderHandler} defaultChecked checked={state.gender === "남자"} />남자
-            <input type="radio" name="gender" value="여자" onChange={onGenderHandler} checked={state.gender === "여자"}/>여자
+          <div className="input">
+            <div>
+              <div>주  소 :</div>
+              <input
+                type="text"
+                placeholder="주소"
+                //   name="address"
+                value={state.address}
+                onChange={onAddressHandler}
+              />
+            </div>
           </div>
-          <div>
-            <label>전화 번호</label>
-            <input
-              type="text"
-              placeholder="01000000000"
-              //   name="phoneNumber"
-              value={state.phoneNumber}
-              onChange={onPhoneNumberHandler}
-            />
+          <div className="input">
+            <div>
+              <div>성  별 :</div>
+              {/* <input type="text" placeholder="성별" value={state.gender} onChange={onGenderHandler} /> */}
+              <div id="radioWrap">
+                <input type="radio" name="gender" value="남자" onChange={onGenderHandler} defaultChecked checked={state.gender === "남자"} />남자
+                <input type="radio" name="gender" value="여자" onChange={onGenderHandler} checked={state.gender === "여자"}/>여자
+              </div>
+            </div>
+          <div className="input"></div>
+            <div>
+              <div>전화번호 :</div>
+              <input
+                type="text"
+                placeholder="01000000000"
+                //   name="phoneNumber"
+                value={state.phoneNumber}
+                onChange={onPhoneNumberHandler}
+              />
+            </div>
           </div>
-          <br />
-          <button onClick={createMember}>회원가입</button>
-        </form>
+            <br />
+            <div className="btnWrap">
+              <button className="btn text-white" onClick={createMember}>회원가입</button>
+            </div>
+          </form>
+        </div>
       </div>
     </Layout>
   );

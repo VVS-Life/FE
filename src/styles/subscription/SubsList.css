@@ -1,0 +1,25 @@
+.trtd > th {
+    text-align: center;
+    background-color: #70C3C5;
+    color: white;
+}
+
+.trtd > td {
+    text-align: center;
+}
+
+#tableWrap {
+    width: 100%;
+    height: 100%;
+}
+
+#tableWrap2 {
+    width: 90%;
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}

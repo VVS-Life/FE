@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import MemberService from "../../service/MemberService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import '../../styles/member/MemberLogin.css'
 
 export default function MemberLogin() {
   const navigate = useNavigate();
@@ -40,39 +41,53 @@ export default function MemberLogin() {
     }
   };
 
-  const joinForm = async (event) => {
-    event.preventDefault();
+  const moveLogin = async (event) => {
+    navigate("/login/member");
+  };
+
+  const moveJoin = async (event) => {
     navigate("/join/member");
   };
 
   return (
-    <Layout pageName="로그인">
-      <div>
-        <form onSubmit={onSubmitHandler}>
-          <div>
-            <label>아이디</label>
-            <input
-              type="text"
-              placeholder="아이디"
-              name="nickname"
-              value={state.nickname}
-              onChange={onNicknameHandler}
-            />
-          </div>
-          <div>
-            <label>비밀번호</label>
-            <input
-              type="password"
-              placeholder="비밀번호"
-              //   name="password"
-              value={state.password}
-              onChange={onPasswordHandler}
-            />
-          </div>
-          <br />
-          <button onClick={loginMember}>로그인</button>
-          <button onClick={joinForm}>회원 가입</button>
-        </form>
+    <Layout pageName="로그인" id="page">
+      <div id="loginWrap">
+        <div style={{height: "480px"}}>
+        <div id="pageMove">
+          <button onClick={moveLogin} style={{backgroundColor: '#F1F9FA'}}>로그인</button>
+          <button onClick={moveJoin} style={{backgroundColor: '#d6d6d6'}}>회원가입</button>
+        </div>
+          <form onSubmit={onSubmitHandler}>
+            <div className="input" id="inputId">
+              <div>
+                <div>아 이 디 :</div>
+                <input
+                  type="text"
+                  placeholder="아이디"
+                  name="nickname"
+                  value={state.nickname}
+                  onChange={onNicknameHandler}
+                />
+              </div>
+            </div>
+            <div className="input" id="inputPw">
+              <div>
+                <div>비밀번호 :</div>
+                <input
+                  type="password"
+                  placeholder="비밀번호"
+                  //   name="password"
+                  value={state.password}
+                  onChange={onPasswordHandler}
+                />
+              </div>
+            </div>
+            <br />
+            <div className="btnWrap">
+              <button className="btn text-white" onClick={loginMember}>로그인</button>
+            </div>
+          </form>
+        </div>
       </div>
     </Layout>
   );

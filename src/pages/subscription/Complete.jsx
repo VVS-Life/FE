@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import '../../styles/subscription/complete.css';
-
+import '../../styles/subscription/Complete.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 
 export default function Complete() {
