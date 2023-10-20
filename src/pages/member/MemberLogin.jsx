@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import MemberService from "../../service/MemberService";
 import { useNavigate } from "react-router-dom";
+import '../../styles/member/MemberLogin.css'
 
 export default function MemberLogin() {
   const navigate = useNavigate();
@@ -46,33 +47,39 @@ export default function MemberLogin() {
   };
 
   return (
-    <Layout pageName="로그인">
-      <div>
+    <Layout pageName="로그인" id="page">
+      <div id="loginWrap">
+        <div>
         <form onSubmit={onSubmitHandler}>
-          <div>
-            <label>아이디</label>
-            <input
-              type="text"
-              placeholder="아이디"
-              name="nickname"
-              value={state.nickname}
-              onChange={onNicknameHandler}
-            />
+          <div className="inputId">
+            <div>
+              <div>아 이 디 :</div>
+              <input
+                type="text"
+                placeholder="아이디"
+                name="nickname"
+                value={state.nickname}
+                onChange={onNicknameHandler}
+              />
+            </div>
           </div>
-          <div>
-            <label>비밀번호</label>
-            <input
-              type="password"
-              placeholder="비밀번호"
-              //   name="password"
-              value={state.password}
-              onChange={onPasswordHandler}
-            />
+          <div className="inputPw">
+            <div>
+              <div>비밀번호 :</div>
+              <input
+                type="password"
+                placeholder="비밀번호"
+                //   name="password"
+                value={state.password}
+                onChange={onPasswordHandler}
+              />
+            </div>
           </div>
           <br />
           <button onClick={loginMember}>로그인</button>
           <button onClick={joinForm}>회원 가입</button>
         </form>
+        </div>
       </div>
     </Layout>
   );

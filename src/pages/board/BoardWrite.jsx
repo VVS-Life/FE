@@ -4,13 +4,15 @@ import BoardService from '../../service/BoardService';
 import { useNavigate } from "react-router-dom";
 
 export default function BoardWrite() {
+    const jwtToken = localStorage.getItem('Authorization');
+
     const navigate = useNavigate();
 
     const [state, setState] = useState({
         title: '',
         content: '',
         image: null,
-        isPublic: '비공개'
+        isPublic: '공개'
     });
 
     const changeTitleHandler = (event) => {
@@ -44,7 +46,7 @@ export default function BoardWrite() {
         };
 
         try {
-            await BoardService.createBoard(dto, state.image);
+            await BoardService.createBoard(dto, state.image, jwtToken);
             alert("글이 성공적으로 등록되었습니다.");
             navigate('/boardList');
         } catch (error) {
@@ -83,8 +85,8 @@ export default function BoardWrite() {
                                     <br></br>
                                     <div className="form-group">
                                         <label> [ 비공개 여부 ] </label><br></br>
-                                        <input type="checkbox" name="isPublic" onChange={changeIsPublicHandler} checked={state.isPublic === "공개"} />
-                                        <label> 공개 </label>
+                                        <input type="checkbox" name="isPublic" onChange={changeIsPublicHandler} checked={state.isPublic === "비공개"} />
+                                        <label> 비공개 </label>
                                     </div>
                                     <br></br>
                                     <button className="btn btn-success" onClick={createBoard} disabled={!isFormValid()}>저장</button>
