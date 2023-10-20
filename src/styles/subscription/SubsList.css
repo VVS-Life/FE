@@ -23,3 +23,26 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+.divBtn {
+    display: flex;
+    justify-content: center;
+    height: 10px;
+}
+
+#toMainBtn {
+    margin-right: 30px;
+}
+
+#toSubsListBtn {
+    background-color: #D6C9B5;
+}
+
+.completeBtn{
+    height: 8px;
+    width: 80px;
+    margin: 0;
+    font-size: 15px;
+    padding: 13px;
+    
+}

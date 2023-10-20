@@ -28,7 +28,7 @@ const Test = (props) => {
         { id: 2, text: '채팅', 
             url: '/chat'  },
         { id: 3, text: '가입내역조회', 
-            url: '/subsList'  },  
+            url: '/subscription'  },  
     ];
     const items3 = [
         { id: 1, text: '질병 진단 서비스', 
@@ -58,7 +58,7 @@ const Test = (props) => {
                     <Link to = "/login/member" className="topMenu">로그인</Link>
                         <Link to = "/join/member" className="topMenu">회원가입</Link>
                     <Link to = "/logout" className="topMenu">로그아웃</Link>
-                    <Link to = "/subscription" className="topMenu">가입관리</Link>
+                    <Link to = "/subsManage" className="topMenu">가입관리</Link>
                     <Link to = "/boardList" className="topMenu">문의</Link>
                 </div>
             </div>
@@ -105,7 +105,7 @@ const Test = (props) => {
                         <Link to = "/login/member" className="topMenu2">로그인</Link>
                         <Link to = "/join/member" className="topMenu2">회원가입</Link>
                         <Link to = "/logout" className="topMenu2">로그아웃</Link>
-                        <Link to = "/subscription" className="topMenu2">가입관리</Link>
+                        <Link to = "/subsManage" className="topMenu2">가입관리</Link>
                         <Link to = "/boardList" className="topMenu2">문의</Link>
                     </div>
                 </div>
