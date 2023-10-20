@@ -23,7 +23,7 @@ const MainContainer = () => {
             </div>
             <div className="freqUsedMenuBox">
                     <div className="freqUsedMenu">
-                        <Link to = "/"><img src="./images/find_myList.png" alt="myList" className="freqUsedImg"/></Link>
+                        <Link to = "/subscription"><img src="./images/find_myList.png" alt="myList" className="freqUsedImg"/></Link>
                         <div className="freqText">가입내역조회</div>
                     </div>
                     <div className="freqUsedMenu">
