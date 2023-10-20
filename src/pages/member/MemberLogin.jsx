@@ -54,8 +54,8 @@ export default function MemberLogin() {
       <div id="loginWrap">
         <div style={{height: "480px"}}>
         <div id="pageMove">
-          <button onClick={moveLogin} style={{backgroundColor: '#F1F9FA'}}>로그인</button>
-          <button onClick={moveJoin} style={{backgroundColor: '#d6d6d6'}}>회원가입</button>
+          <button onClick={moveLogin} style={{backgroundColor: '#FFFFFF'}}>로그인</button>
+          <button onClick={moveJoin} style={{backgroundColor: '#e4e4e4'}}>회원가입</button>
         </div>
           <form onSubmit={onSubmitHandler}>
             <div className="input" id="inputId">

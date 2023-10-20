@@ -21,7 +21,7 @@ export default function Healthcare() {
     return (
         // props로 페이지 이름을 넣어주면 header에 표시된다.
         <Layout pageName='질병 진단 서비스'>
-            <div className='page'>
+            <div>
                 <div className='introWrap'>
                     <h1>질병원인/증상 탐색 서비스</h1>
                     <div>본 서비스는 인식률이 낮은 질병의 잠재적 원인과 증상을 파악하여 예방과 진단에 기여하고자 개발한 서비스입니다. </div>
