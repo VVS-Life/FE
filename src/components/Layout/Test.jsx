@@ -1,12 +1,11 @@
 import React, { useState, useEffect,  } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Test = (props) => {
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // const navigate = useNavigate();
 
     const handleMouseEnter = () => {
         setIsMouseOver(true);
@@ -113,7 +112,17 @@ const Test = (props) => {
                                     <ul className='navItem'>
                                         {items2.map(item => (
                                             <li key={item.id} className='subMenuTitle'>
-                                                <Link to={item.url} className="category" >{item.text}</Link>
+                                                 {isLoggedIn ? (
+                                                    // 로그인 상태일 때
+                                                    <>
+                                                        <Link to={item.url} className="category">{item.text}</Link>
+                                                    </>
+                                                    ) : (
+                                                    // 비로그인 상태일 때
+                                                    <>
+                                                        <Link to='/login/member' className="category">{item.text}</Link>
+                                                    </>
+                                                )}
                                             </li>
                                         ))}
                                     </ul>

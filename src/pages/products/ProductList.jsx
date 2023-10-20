@@ -9,7 +9,6 @@ const BoxCard = ({ title, link }) => {
   return (
     <Link to={linkWithSlash} className="boxCard">
         <p>{title}</p>
-        <p>{link}</p>
     </Link>
   );
 }

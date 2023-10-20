@@ -27,7 +27,6 @@ const Header = (props) => {
         // 로그아웃
         // 로컬 스토리지에서 토큰 제거
         localStorage.removeItem('Authorization');
-        //window.location.reload()
     }    
 
     const items1 = [
@@ -111,7 +110,17 @@ const Header = (props) => {
                                     <ul className='navItem'>
                                         {items2.map(item => (
                                             <li key={item.id} className='subMenuTitle'>
-                                                <Link to={item.url} className="category" >{item.text}</Link>
+                                                {isLoggedIn ? (
+                                                    // 로그인 상태일 때
+                                                    <>
+                                                        <Link to={item.url} className="category">{item.text}</Link>
+                                                    </>
+                                                    ) : (
+                                                    // 비로그인 상태일 때
+                                                    <>
+                                                        <Link to='/login/member' className="category">{item.text}</Link>
+                                                    </>
+                                                )}
                                             </li>
                                         ))}
                                     </ul>
