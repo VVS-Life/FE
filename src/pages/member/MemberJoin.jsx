@@ -80,11 +80,11 @@ export default function MemberJoin() {
 
   return (
     <Layout pageName="회원가입">
-      <div id="loginWrap">
+      <div id="loginWrap" >
         <div style={{height: "820px"}}>
           <div id="pageMove">
-            <button onClick={moveLogin} style={{backgroundColor: '#d6d6d6'}}>로그인</button>
-            <button onClick={moveJoin} style={{backgroundColor: '#F1F9FA'}}>회원가입</button>
+            <button onClick={moveLogin} style={{backgroundColor: '#e4e4e4'}}>로그인</button>
+            <button onClick={moveJoin} style={{backgroundColor: '#FFFFFF'}}>회원가입</button>
           </div>
           <form onSubmit={onSubmitHandler}>
           <div className="input">
