@@ -9,6 +9,7 @@ import MemberJoin from './pages/member/MemberJoin'
 import MemberLogin from './pages/member/MemberLogin';
 import ProductList from './pages/products/ProductList'
 import Complete from './pages/subscription/Complete';
+import SubsList from './pages/subscription/SubsList';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login/member" element={<MemberLogin />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/subscription/complete" element={<Complete />} />
+        <Route path="/subscription" element={<SubsList />} />
       </Routes>
     </BrowserRouter>
   );
