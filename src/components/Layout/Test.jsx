@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect,  } from 'react';
 import { Link } from 'react-router-dom';
 
 const Test = (props) => {
     const [isMouseOver, setIsMouseOver] = useState(false);
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
     const handleMouseEnter = () => {
         setIsMouseOver(true);
@@ -11,6 +14,22 @@ const Test = (props) => {
     const handleMouseLeave = () => {
         setIsMouseOver(false);
     };
+
+    const jwtToken = localStorage.getItem('Authorization');
+
+     // jwtToken이 존재하면 로그인 상태로 설정
+     useEffect(() => {
+        if (jwtToken) {
+            setIsLoggedIn(true);
+        }
+    }, [jwtToken]);
+
+    const handleLogoutClick = () => {
+        // 로그아웃
+        // 로컬 스토리지에서 토큰 제거
+        localStorage.removeItem('Authorization');
+        window.location.reload();
+    }    
 
     const items1 = [
         { id: 1, text: '종신/정기보험', 
@@ -25,7 +44,7 @@ const Test = (props) => {
     const items2 = [
         { id: 1, text: '문의게시판', 
             url: '/boardList?page=0&size=10' },
-        { id: 2, text: '채팅', 
+        { id: 2, text: '채팅상담', 
             url: '/chat'  },
         { id: 3, text: '가입내역조회', 
             url: '/subscription'  },  
@@ -47,7 +66,7 @@ const Test = (props) => {
                                 <Link to="/productList" className="navStyle" id='products'>보험상품</Link>
                             </li>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
-                                <Link to="/memberServices" className="navStyle" id='clientCenter'>고객센터</Link>
+                                <Link to="/csMain" className="navStyle" id='customerCenter'>고객센터</Link>
                             </li>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
                                 <Link to="/healthCare" className="navStyle" id='healthCare'>헬스케어 서비스</Link>
@@ -55,9 +74,18 @@ const Test = (props) => {
                         </ul>
                 </nav>
                 <div>
-                    <Link to = "/login/member" className="topMenu">로그인</Link>
-                        <Link to = "/join/member" className="topMenu">회원가입</Link>
-                    <Link to = "/logout" className="topMenu">로그아웃</Link>
+                    {isLoggedIn ? (
+                        // 로그인 상태일 때
+                        <>
+                            <Link to="/" className="topMenu" onClick={handleLogoutClick}>로그아웃</Link>
+                        </>
+                    ) : (
+                        // 비로그인 상태일 때
+                        <>
+                            <Link to="/login/member" className="topMenu">로그인</Link>
+                            <Link to="/join/member" className="topMenu">회원가입</Link>
+                        </>
+                    )}
                     <Link to = "/subsManage" className="topMenu">가입관리</Link>
                     <Link to = "/boardList" className="topMenu">문의</Link>
                 </div>
@@ -80,11 +108,21 @@ const Test = (props) => {
                                     </ul>
                                 </li>
                                 <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
-                                    <Link to="/memberServices" className="navStyle2" id='clientCenter2'>고객센터</Link>
+                                    <Link to="/csMain" className="navStyle2" id='customerCenter2'>고객센터</Link>
                                     <ul className='navItem'>
                                         {items2.map(item => (
                                             <li key={item.id} className='subMenuTitle'>
-                                                <Link to={item.url} className="category" >{item.text}</Link>
+                                                 {isLoggedIn ? (
+                                                    // 로그인 상태일 때
+                                                    <>
+                                                        <Link to={item.url} className="category">{item.text}</Link>
+                                                    </>
+                                                    ) : (
+                                                    // 비로그인 상태일 때
+                                                    <>
+                                                        <Link to='/login/member' className="category">{item.text}</Link>
+                                                    </>
+                                                )}
                                             </li>
                                         ))}
                                     </ul>
@@ -102,9 +140,18 @@ const Test = (props) => {
                             </ul>
                     </nav>
                     <div>
-                        <Link to = "/login/member" className="topMenu2">로그인</Link>
-                        <Link to = "/join/member" className="topMenu2">회원가입</Link>
-                        <Link to = "/logout" className="topMenu2">로그아웃</Link>
+                        {isLoggedIn ? (
+                            // 로그인 상태일 때
+                            <>
+                                <Link to="/" className="topMenu2" onClick={handleLogoutClick}>로그아웃</Link>
+                            </>
+                        ) : (
+                            // 비로그인 상태일 때
+                            <>
+                                <Link to="/login/member" className="topMenu2">로그인</Link>
+                                <Link to="/join/member" className="topMenu2">회원가입</Link>
+                            </>
+                        )}
                         <Link to = "/subsManage" className="topMenu2">가입관리</Link>
                         <Link to = "/boardList" className="topMenu2">문의</Link>
                     </div>

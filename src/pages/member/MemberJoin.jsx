@@ -161,11 +161,11 @@ export default function MemberJoin() {
           </div>
           <div className="input">
             <div>
-              <div>성  별 :</div>
+              <div id="genderBox">성  별 :</div>
               {/* <input type="text" placeholder="성별" value={state.gender} onChange={onGenderHandler} /> */}
               <div id="radioWrap">
-                <input type="radio" name="gender" value="남자" onChange={onGenderHandler} defaultChecked checked={state.gender === "남자"} />남자
-                <input type="radio" name="gender" value="여자" onChange={onGenderHandler} checked={state.gender === "여자"}/>여자
+                <div className="genderSelect"><input type="radio" name="gender" value="남자" onChange={onGenderHandler} defaultChecked checked={state.gender === "남자"} />&nbsp;남</div>
+                <div className="genderSelect"><input type="radio" name="gender" value="여자" onChange={onGenderHandler} checked={state.gender === "여자"} />&nbsp;여</div>
               </div>
             </div>
           <div className="input"></div>

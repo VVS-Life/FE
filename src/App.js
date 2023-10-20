@@ -11,6 +11,7 @@ import ProductList from './pages/products/ProductList'
 import ProductDetail from './pages/products/ProductDetail';
 import Complete from './pages/subscription/Complete';
 import SubsList from './pages/subscription/SubsList';
+import CsMain from './pages/cs/csMain'
 import SubsManage from './pages/subscription/SubsManage';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/subsManage" element={<SubsManage />} />
         <Route path="/productList?search/category=:ctg" element={<ProductList />} />
         <Route path="/productDetail/:id" element={<ProductDetail />} />
+        <Route path="/csMain" element={<CsMain />} />
       </Routes>
     </BrowserRouter>
   );

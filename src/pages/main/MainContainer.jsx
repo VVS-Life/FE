@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 
 const MainContainer = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const jwtToken = localStorage.getItem('Authorization');
+
+     // jwtToken이 존재하면 로그인 상태로 설정
+     useEffect(() => {
+        if (jwtToken) {
+            setIsLoggedIn(true);
+        }
+    }, [jwtToken]);
+
     const slides = [
       './images/slide1.png',
       './images/slide2.png',
@@ -22,18 +34,31 @@ const MainContainer = () => {
             <div className="mainImg">
             </div>
             <div className="freqUsedMenuBox">
-                    <div className="freqUsedMenu">
-                        <Link to = "/subscription"><img src="./images/find_myList.png" alt="myList" className="freqUsedImg"/></Link>
-                        <div className="freqText">가입내역조회</div>
-                    </div>
-                    <div className="freqUsedMenu">
-                        <Link to = "/"><img src="./images/chat.png" alt="chat" className="freqUsedImg"/></Link>
-                        <div className="freqText">채팅상담</div>
-                    </div>
-                    <div className="freqUsedMenu">
-                        <Link to = "/"><img src="./images/appInfo.png" alt="appInfo" className="freqUsedImg"/></Link>
-                        <div className="freqText">앱안내</div>
-                    </div>
+                {isLoggedIn ? (
+                    // 로그인 상태일 때
+                    <>
+                        <div className="freqUsedMenu">
+                            <Link to = "/subscription"><img src="./images/find_myList.png" alt="myList" className="freqUsedImg"/></Link>
+                            <div className="freqText">가입내역조회</div>
+                        </div>
+                    </>
+                ) : (
+                    // 비로그인 상태일 때
+                    <>
+                        <div className="freqUsedMenu">
+                            <Link to = "/login/member"><img src="./images/find_myList.png" alt="myList" className="freqUsedImg"/></Link>
+                            <div className="freqText">가입내역조회</div>
+                        </div>
+                    </>
+                )}
+                <div className="freqUsedMenu">
+                    <Link to = "/csMain"><img src="./images/chat.png" alt="chat" className="freqUsedImg"/></Link>
+                    <div className="freqText">채팅상담</div>
+                </div>
+                <div className="freqUsedMenu">
+                    <Link to = "/"><img src="./images/appInfo.png" alt="appInfo" className="freqUsedImg"/></Link>
+                    <div className="freqText">앱안내</div>
+                </div>
             </div>
             <div className="mainBanner">
                 {slides.map((slide, index) => (
@@ -45,7 +70,6 @@ const MainContainer = () => {
                     />
                 ))}
             </div>
-
         </div>
     )
 }

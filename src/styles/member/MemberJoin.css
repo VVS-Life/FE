@@ -78,3 +78,18 @@
     width: 100px;
     height: 40px;
 }
+
+#radioWrap {
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    width: 200px;
+}
+
+#genderBox {
+    margin-right: 0;
+}
+
+.genderSelect {
+    margin-right: 20px;
+}
