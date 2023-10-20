@@ -5,8 +5,8 @@
 /* header css */
 
 .logoStyle {
-    width: 160px;
-    height: 40px;
+    width: 190px;
+    height: 42px;
 }
 
 .header {
@@ -155,10 +155,10 @@
 
 /* main css */
 
-.main {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    min-height: 50vh;
+.main {padding-top: 100px; /* 상단에 여백을 추가합니다. */
+    padding-bottom: 100px; /* 하단에 여백을 추가합니다. */
+    min-height: calc(50vh - 200px); /* 뷰포트 높이에서 위아래 여백을 제외합니다. */
+    background-color: #f4fbfc; /* 원하는 배경색을 여기에 설정하세요. */
 }
 
 .freqUsedMenuBox {

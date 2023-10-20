@@ -41,7 +41,7 @@ const Header = (props) => {
         <><header className='header'>
             <div className='headerContents'>
                 <div>
-                    <Link to = "/"><img src="./images/VVS_LOGO_nu.png" alt="vvs" className="logoStyle"/></Link>
+                    <Link to = "/"><img src="./images/VVS_LOGO_Header.png" alt="vvs" className="logoStyle"/></Link>
                 </div>
                 <nav className="navigation">
                         <ul className='menuBox'>
