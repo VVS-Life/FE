@@ -5,7 +5,8 @@
 }
 
 #loginWrap > div {
-    width: 42%;
+    width: 50%;
+    /* height: 800px; */
     background-color: #F1F9FA;
     border: 2px solid #E1E1E1;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -18,6 +19,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 #pageMove > button {
@@ -29,42 +31,39 @@
     color: #565656;
 }
 
-#inputId {
-    margin-top: 70px;
-    margin-bottom: 30px;
-}
-
-#inputPw {
-    margin-bottom: 40px;
-}
-
 .input > div {
     display: flex;
     width: 100%;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .input > div > div {
     color: #70C3C5;
-    margin-left: 60px;
+    margin-left: 20px;
     margin-right: 30px;
     font-weight: bolder;
     font-size: 25px;
-    width: 30%;
+    width: 35%;
 }
 
 .input > div > input {
     background-color: #70C3C5;
-    margin-right: 40px;
+    margin-right: 20px;
     font-weight: bolder;
     font-size: 18px;
     color: white;
     border-radius: 10px;
     border: 2px solid #E1E1E1;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    width: 60%;
+    width: 70%;
     height: 50px;
     padding-left: 15px;
+}
+
+.radioWrap > input {
+    font-size: 30px;
+    color: black;
 }
 
 .btnWrap {
@@ -75,8 +74,7 @@
 }
 
 .btnWrap > button {
-    margin: 0px 30px;
     background-color: #70C3C5;
-    width: 120px;
+    width: 100px;
     height: 40px;
 }
