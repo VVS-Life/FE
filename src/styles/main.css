@@ -28,7 +28,7 @@ html {
 }
 
 .slide {
-    width: 100%;
+    width: 90%;
     margin: 20px 0;
 }
 
@@ -73,4 +73,11 @@ html {
 
 .testHead:hover .subNavigation {
     display: block;
+}
+
+.mainBanner {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
