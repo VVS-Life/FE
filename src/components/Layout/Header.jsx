@@ -30,7 +30,7 @@ const Header = (props) => {
         { id: 2, text: '채팅', 
             url: '/chat'  },
         { id: 3, text: '가입내역조회', 
-            url: '/subsList'  },  
+            url: '/subscription'  },  
     ];
     const items3 = [
         { id: 1, text: '질병 진단 서비스', 
@@ -49,7 +49,7 @@ const Header = (props) => {
                                 <Link to="/productList" className="navStyle" id='products'>보험상품</Link>
                             </li>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
-                                <Link to="/memberServices" className="navStyle" id='clientCenter'>고객센터</Link>
+                                <Link to="/csMain" className="navStyle" id='customerCenter'>고객센터</Link>
                             </li>
                             <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
                                 <Link to="/healthCare" className="navStyle" id='healthCare'>헬스케어 서비스</Link>
@@ -82,7 +82,7 @@ const Header = (props) => {
                                     </ul>
                                 </li>
                                 <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='subMenu'>
-                                    <Link to="/memberServices" className="navStyle2" id='clientCenter2'>고객센터</Link>
+                                    <Link to="/csMain" className="navStyle2" id='customerCenter2'>고객센터</Link>
                                     <ul className='navItem'>
                                         {items2.map(item => (
                                             <li key={item.id} className='subMenuTitle'>

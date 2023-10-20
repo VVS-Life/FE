@@ -11,7 +11,6 @@ class BoardService {
         return "Bearer" + " " + jwtToken
     }
 
-
     createBoard(dto, images, jwtToken) {
         const formData = new FormData();
         // const jsonData = JSON.stringify(board);

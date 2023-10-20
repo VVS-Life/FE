@@ -1,0 +1,33 @@
+.boxImg {
+    width: 100px;
+    height: 100px;
+}
+
+.csBoxCard {
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 10px;
+    width: 450px;
+    height: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.csBoxCard:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+.csBoxCard p {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 10px 0;
+  }
+
+  #boardList {
+    background-color: #E2F3F3;
+  }

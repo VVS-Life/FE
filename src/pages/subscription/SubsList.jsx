@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/subscription/SubsList.css';
 
 export default function Complete() {
-    const navigate = useNavigate();
     const [subsList, setSubsList] = useState([]);
 
     useEffect(() => {
@@ -29,7 +28,7 @@ export default function Complete() {
     }
 
   return (
-    <Layout pageName="보험 신청 완료" id="tableWrap">
+    <Layout pageName="가입 내역 조회" id="tableWrap">
         <div id="tableWrap2">
             <table className="table table-bordered">
                 <colgroup>
