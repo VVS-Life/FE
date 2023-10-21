@@ -55,7 +55,7 @@ const Header = (props) => {
     return (
         <><header className='header'>
             <div className='headerContents'>
-                <div>
+                <div className='logoDiv'>
                     <Link to = "/"><img src="./images/VVS_LOGO_Header.png" alt="vvs" className="logoStyle"/></Link>
                 </div>
                 <nav className="navigation">
@@ -90,7 +90,7 @@ const Header = (props) => {
             </div>
             <div className={`subNavigation ${isMouseOver ? 'expanded' : ''}`}>       
                 <div className='headerContents'>
-                    <div>
+                    <div className='logoDiv'>
                         <Link to = "/"><img src="./images/VVS_LOGO_nu.png" alt="vvs" className="logoStyle"/></Link>
                     </div>
                     <nav className="navigation"> 

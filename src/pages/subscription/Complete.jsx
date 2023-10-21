@@ -12,12 +12,17 @@ export default function Complete() {
         navigate("/");
       };
 
+      const toSubsList = async (event) => {
+        event.preventDefault();
+        navigate("/subscription");
+      };
+
   return (
     <Layout pageName="보험 신청 완료">
         <h2 className="completeText">신청해주셔서 감사합니다</h2>
         <div className="btnBox">
-          <button onClick={toMain} className="completeBtn" id="toMainBtn">메인으로 이동</button>
-          <button onClick={()=>{}} className="completeBtn" id="toSubsListBtn">가입 내역으로 이동</button>
+          <button onClick={toMain} className="complBtn" id="toMainBtn">메인으로 이동</button>
+          <button onClick={toSubsList} className="complBtn" id="toSubsListBtn">가입 내역으로 이동</button>
         </div>
     </Layout>
   );

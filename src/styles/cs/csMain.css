@@ -3,6 +3,13 @@
     height: 100px;
 }
 
+.csBoxCardList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 7%;
+}
+
 .csBoxCard {
     border: 1px solid #ddd;
     margin: 20px;
@@ -33,3 +40,15 @@
 #boardList {
     background-color: #E2F3F3;
 }
+
+.csBottom {
+    margin-top: 130px;
+}
+
+.bottomImg{
+    width: 100%;
+}
+
+.csBoxCard {
+    background-color: white;
+} 

@@ -76,6 +76,10 @@
     flex-direction: column;
 }
 
+.logoDiv, .subMenu, .subMenu2 {
+    margin-top: 30px;
+}
+
 .subMenuTitle {
     margin-left: 100px;
 }
