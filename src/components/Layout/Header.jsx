@@ -84,7 +84,7 @@ const Header = (props) => {
                             <Link to="/join/member" className="topMenu">회원가입</Link>
                         </>
                     )}
-                    <Link to = "/subsManage" className="topMenu">가입관리</Link>
+                    <Link to = "/adminCheck" className="topMenu">가입관리</Link>
                     <Link to = "/boardList" className="topMenu">문의</Link>
                 </div>
             </div>
@@ -150,7 +150,7 @@ const Header = (props) => {
                                 <Link to="/join/member" className="topMenu2">회원가입</Link>
                             </>
                         )}
-                        <Link to = "/subsManage" className="topMenu2">가입관리</Link>
+                        <Link to = "/adminCheck" className="topMenu2">가입관리</Link>
                         <Link to = "/boardList" className="topMenu2">문의</Link>
                     </div>
                 </div>

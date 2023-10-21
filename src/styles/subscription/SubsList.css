@@ -37,9 +37,13 @@
 }
 
 .completeBtn{
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 8px;
     width: 80px;
     margin: 0 10px;
     font-size: 15px;
-    padding: 13px;
+    padding: 15px;
 }
